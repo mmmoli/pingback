@@ -1,6 +1,8 @@
 (function($) {
 
-	JQuery.fn.pingback = function($element, endClassName, options) {
+	$.fn.extend({
+
+		pingback: function($element, endClassName, options) {
 
 		/**
 		* Store reference to the HTML to animate
@@ -31,10 +33,11 @@
 		*/
 		var v_s = 50.0;
 
-
-		if (options !== undefined) {
-			// Override defaults defined above
+		var defaults = {
+			v_t: v_t,
+			v_s: v_s,
 		}
+		var options =  $.extend(defaults, options);
 
 		// **********
 		// Hooks
@@ -45,6 +48,10 @@
 		// **********
 
 	};
+
+
+	});
+
 
 })(JQuery);
 
